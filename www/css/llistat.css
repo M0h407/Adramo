@@ -1,0 +1,77 @@
+*{
+    padding: 0px;
+    margin: 0;
+    font-family: calibri;
+}
+
+body{
+    background-color: dimgrey;
+}
+
+
+h1{
+    font-size: 350%;
+    color: white;
+    text-align: center;
+}
+
+h2{
+    font-size: 200%;
+    color: white;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.taula{
+    width: 350px;
+    height: 500px;
+    align-content: center;
+    margin: 15% 7.5% 1% 7.5%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#titolTaula{
+    margin-top: -25px;
+    width: 346.5px;
+    background-color: #F691FF;
+    font-size: 20px;
+    position: fixed;
+}
+
+#id_envios{
+    padding: 0% 5%;
+}
+
+#id_paquet{
+    padding: 0% 8%;
+}
+
+#numIn{
+    padding: 0% 0% 0% 1%;
+}
+
+td{
+    background-color: #9DFFFF;
+    width: 350px;
+    text-align: center;
+    font-size: 125%;
+}
+
+td img{
+    width: 50%;
+}
+
+.botoMapa{
+    padding: 3% 10%;
+    border-color: #00A9A9;
+    border-radius: 15%;
+    margin: 0% 31%;
+    background-color: #9DFFFF;
+}
+
+#aBoto{
+    font-size: 170%;
+    text-decoration: none;
+    color: black;
+}

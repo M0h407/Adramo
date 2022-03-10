@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Oriadix</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="cordova.js"></script>
+ 
+
+</head>
+<body>
+
+    <div class="all">
+        <div class="app">
+            <h1>Benvingut</h1>
+            <img src="img/logo.png" alt="logo"/>
+            <form name="form"> 
+                <label for="dni">DNI:</label><br>
+                <input type="text" id="dni" name="dni" placeholder="DNI"><br>
+                <label for="contra">Contrasenya:</label><br>
+                <input type="password" id="pwd" name="contra" placeholder="*******"><br><br>
+                <input id="login" type="submit" value="Login">
+                <a href="register.html" style="float:right">Registre</a>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#login").click(function(){
+          var dni_login = $("#dni").val();
+          var password_login = $("#pwd").val();
+      
+          console.log(dni + pwd);
+      
+          if($.trim(dni).length > 0 && $.trim(pwd).length > 0){
+            event.preventDefault();
+            $.ajax({
+              type: "POST",
+              crossDomain: true,
+              url: "http://192.168.1.69/adramo/login.php",
+              data: {
+                dni: dni_login,
+                pwd: password_login
+              },
+              cache: false,
+              success: function(data){
+                alert(data);
+                localStorage.setItem("dni",dni_login);
+                location.replace("mapa.html");
+              }
+            })
+          } else {
+            alert("ERROR");
+          }
+        })
+      </script>
+</body>
+
+</html>
