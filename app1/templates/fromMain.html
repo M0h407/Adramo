@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Adramo</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+
+<body>
+	
+	<div class="taula">
+	
+		<div class="consultar-div">
+						
+			<div id="formulari1" class="formulari">
+				
+				<form action="/classe" id="form-consultar">
+					
+					<h3>Omple les dades per connectar-te amb la BBDD:</h3>
+					
+					<label for="ip">IP:</label><br/>
+					<input type="text" name="ip" required><br/><br/>
+					
+					<label for="port">PORT:</label><br/>
+					<input type="text" name="port" required><br/><br/>
+					
+					<label for="bbdd">BBDD:</label><br/>
+					<input type="text" name="bbdd" required><br/><br/>
+					
+					<label for="usuari">USUARI:</label><br/>
+					<input type="text" name="usuari" required><br/><br/>
+					
+					<label for="contrasenya">CONTRASENYA:</label><br/>
+					<input type="password" name="contrasenya" required><br/>
+					
+					<h3>Indica la taula a consultar:</h3>
+					<label for="taula">TAULA:</label><br/>
+					<input type="text" name="taula"><br/><br/>
+					
+					<p>Indica una sentència SQL:</p>
+					<label for="sql">SENTÈNCIA:</label><br/>
+					<input type="text" name="sql"><br/><br/>
+					
+					<input type="submit" name="Submit" value="CONSULTAR" required><br/>
+					
+				
+				</form>
+			
+			</div>
+			
+		</div>
+		
+		<div class="resultat">
+			<h3>Resultat consulta taula {{taula}}</h3><br/>
+			<div>
+				{% for valor in outputs %}
+				<span>ID: </span><strong>{{valor[0]}}</strong><br/>
+				<span>DNI: </span><strong>{{valor[1]}}</strong><br/>
+				<span>NOM: </span><strong>{{valor[2]}}</strong><br/>
+				<span>COGNOM: </span><strong>{{valor[3]}}</strong><br/>
+				<span>CARRER: </span><strong>{{valor[4]}}</strong><br/>
+				<span>PAIS: </span><strong>{{valor[5]}}</strong><br/>
+				<span>TIPUS: </span><strong>{{valor[6]}}</strong><br/><br/>
+			{% endfor %}
+			</div>
+			
+		</div>
+	
+	</div>
+	
+</body>
+
+</html>

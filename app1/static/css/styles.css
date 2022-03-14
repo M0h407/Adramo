@@ -1,0 +1,15 @@
+.formulari{
+	width: 100%;
+}
+
+.consultar-div, .resultat{	
+	padding: 15px 30px 30px 30px;
+	width: 50%;
+	border: 2px solid black;
+	height: 680px;
+}
+
+.taula{
+	display: flex;
+	width: 100%;
+}
